@@ -1,0 +1,71 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #e2edff;
+}
+#projects {
+  background-color: #ffffff;
+}
+section {
+  padding-top: 5rem;
+}
+
+.gallery-img {
+  width: 100%;
+}
+
+#gallery .row > * {
+  padding: 0;
+}
+
+/* My Picture Section */
+/* komentar atau hapus saja */
+.picture-box::after {
+  display: none;
+}
+/* pastikan .ratio ini pembungkus gambar */
+.picture-box .ratio {
+  position: relative;
+  overflow: hidden;
+  /* DROP aspek-ratio bawaan, ganti dengan padding-top */
+  padding-top: 60%; /* tinggi = 60% lebar → rasio 5:3 */
+  height: 0; /* pastikan kontainer tetap kosong dulu */
+}
+
+.picture-box .ratio::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: color 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1; /* di bawah gambar, karena gambar pakai z-index:10 */
+}
+
+.picture-box .ratio:hover::after {
+  opacity: 0.8; /* atau 0.9 sesuai selera */
+}
+.picture-img {
+  position: relative; /* atau absolute, sesuai kode kamu */
+  z-index: 10;
+}
+/* Buat SVG jadi block dan tanpa margin */
+.svg-divider {
+  display: block;
+  width:100%
+  margin: 0;
+  line-height: 0; /* hilangkan gap bawah */
+}
+#Contact {
+  margin-bottom: 0; /* capek kalau ada space bawaan */
+  padding-bottom: 0;
+}
+footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+footer {
+  background-color: #000676 !important; /* pastikan ini sama dengan fill SVG (#000b76) */
+}
